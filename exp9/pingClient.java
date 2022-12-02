@@ -17,17 +17,18 @@ class pingClient {
         ip = in.readLine();
         System.out.println("Enter the number of packets to send :");
         packets = Integer.parseInt(in.readLine());
-        System.out.println("enada");
         os.writeUTF("P");
         os.writeInt(packets);
         os.writeUTF("A");
         os.writeUTF(ip);
 
-        String pingLine = is.readUTF();
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(soc.getInputStream()));
+        String pingLine = br.readLine();
         while(pingLine != null)
         {
             System.out.println(pingLine);
-            pingLine = is.readUTF();
+            pingLine = br.readLine();
         }
         soc.close();
     }
