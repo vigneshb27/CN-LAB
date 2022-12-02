@@ -17,13 +17,11 @@ class pingServer {
 
         if((is.readUTF()).equals("P"))
         {
-            System.out.println("hi");
             System.out.println("Getting packets...");
             packets = is.readInt();
         }
         if((is.readUTF()).equals("A"))
         {
-            System.out.println("hello");
             System.out.println("Getting ip...");
             ip = is.readUTF();
         }
